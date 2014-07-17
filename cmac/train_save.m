@@ -1,14 +1,14 @@
+# av = angular velocities
+# aa = angular acelerations
 function cmac = train_save()
-	load '../data_loader/dynamics_data/dynamics_walk3.mat';
-	cleaned_data =  dynamics_walk3;
-	[nav_left, nav_right, nangle_left, nangle_right, naa_left, naa_right] = get_normalized_data(cleaned_data);
+	[av_left, av_right, angle_left, angle_right, aa_left, aa_right] = get_training_set_data(get_training_data());
 	cmac = get_cmac(
 		number_values=1000, 
 		number_iter= 1, 
 		neta=1, 
 		proportion=1, 
-		training_set=[nangle_left], 
-		desired_values=nangle_right, 
+		training_set=[angle_left], 
+		desired_values=angle_right, 
 		1
 	);
 	cmac = train(cmac);

@@ -1,10 +1,13 @@
+##############################################
+# for while only angles of ankle can be used #
+##############################################
 function cells = firsts_activations_cells(cmac)
-	% input values goes from 0 to 1. The domain.
+	% input values goes from 0 to pi radians. The domain.
 	% memory positions goes from 1 to cmac.number_values set. The range.
 	% the first point is always (0, 1)
 	% the last point is always (1, cmac.number_values) 
 	% so it is used a linear function
-	m = (cmac.number_values - 1)/(1 - 0);
+	m = (cmac.number_values - 1)/(pi - 0);
 	% using the point (0, 1)
 	% y = m(x - 0) + 1
 	% x == value of input
