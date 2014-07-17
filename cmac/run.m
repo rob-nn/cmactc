@@ -1,2 +1,2 @@
 cmac = train_save();
-see(camc);
+see(cmac);
