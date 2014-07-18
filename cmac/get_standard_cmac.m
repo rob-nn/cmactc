@@ -7,7 +7,7 @@ function cmac = get_standard_cmac()
 		number_iter=11, 
 		neta=1, 
 		proportion=0.3,
-		training_set=[nav_left, nangle_left, naa_left], 
+		training_set=[nangle_left], 
 		desired_values=nangle_right, 
 		1
 	);

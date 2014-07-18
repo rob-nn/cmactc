@@ -29,9 +29,7 @@ end
 
 
 %!shared cmac, nav_left, nav_right, nangle_left, nangle_right, naa_left, naa_right
-%! 	data_loads = get_data_loads();
-%! 	data = clean_data(data_loads(3));
-%! 	[nav_left, nav_right, nangle_left, nangle_right, naa_left, naa_right] = get_normalized_data(data);
+%! 	[nav_left, nav_right, nangle_left, nangle_right, naa_left, naa_right] = get_training_set_data();
 %!
 %! 	cmac = get_cmac(
 %!		number_values=2, 
