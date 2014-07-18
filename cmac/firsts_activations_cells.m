@@ -1,22 +1,23 @@
 ##############################################
-# for while only angles of ankle can be used #
+# for while only angles of knee can be used and onle one input var too#
 ##############################################
 function cells = firsts_activations_cells(cmac)
-	% input values goes from 0 to pi radians. The domain.
-	% memory positions goes from 1 to cmac.number_values set. The range.
-	% the first point is always (0, 1)
-	% the last point is always (1, cmac.number_values) 
-	% so it is used a linear function
+	# input values goes from 0 to pi radians. The domain.
+	# memory positions goes from 1 to cmac.number_values set. The range.
+	# the first point is always (0, 1)
+	# the last point is always (1, cmac.number_values) 
+	# so it is used a linear function
 	m = (cmac.number_values - 1)/(pi - 0);
-	% using the point (0, 1)
-	% y = m(x - 0) + 1
-	% x == value of input
-	% y == position in memory
+	# using the point (0, 1)
+	# y = m(x - 0) + 1
+	# x == value of input
+	# y == position in memory
 	cells = round(m .* cmac.training_set .+ 1);
-	% for each input var put the position in correct position in memory 
-	for variable = 1:cmac.num_in_vars
-		cells(:, variable) = cells(:, variable) .+ (variable-1) .* cmac.size_bank;	
-	end
+	# for each input var put the position in correct position in memory 
+	# Wrong see issue4
+	#for variable = 1:cmac.num_in_vars
+	#	cells(:, variable) = cells(:, variable) .+ (variable-1) .* cmac.size_bank;	
+	#end
 end;
 
 %!shared cmac, cells
