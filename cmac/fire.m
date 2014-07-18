@@ -6,13 +6,4 @@ function f = fire(cmac)
 	f = f ./ sum(activations);
 end
 
-%!shared cmac
-%!	cmac = get_standard_cmac();
-%!test
-%!	assert(fire(cmac) == 0.5);
-%!test
-%!	cmac.weights(1, 1) = 1;
-%!	cmac.training_set(1,1) = 0;
-%!	o = fire(cmac);
-%!	assert(o(1, 1) != 0.5);
 
